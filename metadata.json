@@ -1,0 +1,8 @@
+{
+  "name": "RunCrick",
+  "description": "Comprehensive cricket scoring app with real-time ball-by-ball tracking, live scorecard, overs & wicket management, and detailed player performance statistics.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

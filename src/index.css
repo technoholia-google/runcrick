@@ -1,0 +1,475 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'Outfit', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+  }
+}
+
+.font-scoreboard {
+  font-family: 'Barlow Condensed', sans-serif;
+  letter-spacing: -0.02em;
+}
+
+.font-mono-num {
+  font-family: 'JetBrains Mono', monospace;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ========================================================
+   RUNCRICK MULTI-THEME ENGINE
+   1. bright_sunny: Light Daylight Theme (Crisp White / Sun Amber / Sky Blue)
+   2. day_bright:   Day Bright Colors (Vibrant Athletic Cyan / Amber)
+   3. classic_turf: Traditional Cricket Ground Emerald & Pitch Grass
+   4. srilanka:     Sri Lanka Cricket Royal Navy & Lion Gold
+======================================================== */
+
+/* Global Smooth Theme Transitions */
+[data-theme] {
+  transition: background-color 0.2s ease, border-color 0.2s ease, color 0.2s ease;
+}
+
+/* --------------------------------------------------------
+   1. BRIGHT SUNNY (Crisp Daylight Light Theme for Direct Sunlight)
+-------------------------------------------------------- */
+[data-theme='bright_sunny'],
+[data-theme='bright_sunny'] body {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* App Canvas & Base Backgrounds */
+[data-theme='bright_sunny'] .theme-canvas-bg,
+[data-theme='bright_sunny'] [class*="bg-[#06111f]"],
+[data-theme='bright_sunny'] .bg-slate-950 {
+  background-color: #f8fafc !important;
+  color: #0f172a !important;
+}
+
+/* Primary Surface Cards (Scoreboard, Keypad, Tables, Modals) */
+[data-theme='bright_sunny'] [class*="bg-[#0b1a2e]"],
+[data-theme='bright_sunny'] .bg-slate-900 {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 4px 18px -2px rgba(15, 23, 42, 0.05), 0 1px 3px rgba(15, 23, 42, 0.03) !important;
+  color: #0f172a !important;
+}
+
+/* Secondary Surface Cards & Sub-panels (Crease HUD, Table headers, Sub-cards) */
+[data-theme='bright_sunny'] [class*="bg-[#071322]"],
+[data-theme='bright_sunny'] [class*="bg-[#10253f]"],
+[data-theme='bright_sunny'] [class*="bg-[#050f1d]"],
+[data-theme='bright_sunny'] [class*="bg-[#09182a]"],
+[data-theme='bright_sunny'] .bg-slate-800 {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+  color: #0f172a !important;
+}
+
+/* Top Sticky Header Bar */
+[data-theme='bright_sunny'] header {
+  background-color: rgba(255, 255, 255, 0.97) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 1px 4px 0 rgba(15, 23, 42, 0.06) !important;
+}
+
+/* Mobile Fixed Bottom Navigation Bar */
+[data-theme='bright_sunny'] nav.fixed.bottom-0 {
+  background-color: rgba(255, 255, 255, 0.98) !important;
+  border-color: #e2e8f0 !important;
+  box-shadow: 0 -4px 14px rgba(15, 23, 42, 0.05) !important;
+}
+
+[data-theme='bright_sunny'] nav.fixed.bottom-0 button {
+  color: #64748b !important;
+}
+
+[data-theme='bright_sunny'] nav.fixed.bottom-0 button.text-amber-400 {
+  color: #b45309 !important;
+  background-color: #fef3c7 !important;
+}
+
+/* Desktop Header Navigation in Daylight Theme */
+[data-theme='bright_sunny'] header nav.hidden.md\:flex {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme='bright_sunny'] header nav.hidden.md\:flex button {
+  color: #475569 !important;
+}
+
+[data-theme='bright_sunny'] header nav.hidden.md\:flex button:hover {
+  color: #0f172a !important;
+  background-color: #ffffff !important;
+}
+
+[data-theme='bright_sunny'] header nav.hidden.md\:flex button.text-amber-400 {
+  color: #92400e !important;
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+/* Universal Light Theme Borders & Dividers */
+[data-theme='bright_sunny'] [class*="border-[#1a365d]"],
+[data-theme='bright_sunny'] [class*="border-[#142c4c]"],
+[data-theme='bright_sunny'] .border-slate-800,
+[data-theme='bright_sunny'] .border-slate-700 {
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme='bright_sunny'] [class*="divide-[#142c4c]"],
+[data-theme='bright_sunny'] .divide-slate-800 {
+  border-color: #e2e8f0 !important;
+}
+
+/* High-Contrast Crisp Sunlight Typography on Light Backgrounds */
+[data-theme='bright_sunny'] .text-white,
+[data-theme='bright_sunny'] .text-slate-100 {
+  color: #0f172a !important;
+}
+
+[data-theme='bright_sunny'] .text-slate-200 {
+  color: #1e293b !important;
+}
+
+[data-theme='bright_sunny'] .text-slate-300 {
+  color: #334155 !important;
+}
+
+[data-theme='bright_sunny'] .text-slate-400 {
+  color: #475569 !important;
+}
+
+[data-theme='bright_sunny'] .text-slate-500 {
+  color: #64748b !important;
+}
+
+/* Sunny Amber Accents on Light Backgrounds (High Contrast Amber 700 / 800) */
+[data-theme='bright_sunny'] .text-amber-400 {
+  color: #b45309 !important; /* Amber-700: 4.8:1+ contrast on white */
+}
+
+[data-theme='bright_sunny'] .text-amber-300 {
+  color: #92400e !important; /* Amber-800: 6.5:1+ contrast on white */
+}
+
+/* Sky Blue Accents on Light Backgrounds */
+[data-theme='bright_sunny'] .text-blue-400,
+[data-theme='bright_sunny'] .text-sky-400 {
+  color: #0284c7 !important;
+}
+
+/* -------------------------------------------------------------------------
+   CRITICAL CONTRAST EXCEPTION:
+   Buttons & Badges with Dark or Saturated Backgrounds MUST have
+   crisp pure white text, NEVER dark black on dark red/blue!
+   ------------------------------------------------------------------------- */
+
+/* 1. OUT / WICKET BUTTON (Crimson Red background -> PURE WHITE TEXT) */
+[data-theme='bright_sunny'] button.bg-rose-600,
+[data-theme='bright_sunny'] .bg-rose-600,
+[data-theme='bright_sunny'] button.bg-rose-500,
+[data-theme='bright_sunny'] .bg-rose-500 {
+  background-color: #dc2626 !important;
+  border-color: #b91c1c !important;
+  color: #ffffff !important;
+  box-shadow: 0 4px 12px rgba(220, 38, 38, 0.25) !important;
+}
+
+[data-theme='bright_sunny'] button.bg-rose-600 *,
+[data-theme='bright_sunny'] .bg-rose-600 *,
+[data-theme='bright_sunny'] button.bg-rose-500 *,
+[data-theme='bright_sunny'] .bg-rose-500 * {
+  color: #ffffff !important;
+}
+
+/* 2. Primary Amber Buttons (New Match, Start Innings, Create Match) -> Bold Dark Slate text on Amber-400 */
+[data-theme='bright_sunny'] .bg-amber-400,
+[data-theme='bright_sunny'] button.bg-amber-400 {
+  background-color: #f59e0b !important;
+  color: #0f172a !important;
+  border-color: #d97706 !important;
+}
+
+[data-theme='bright_sunny'] .bg-amber-400 *,
+[data-theme='bright_sunny'] button.bg-amber-400 * {
+  color: #0f172a !important;
+}
+
+/* 3. Scoring Keypad Run Buttons (0, 1, 2, 3) in Daylight Mode */
+[data-theme='bright_sunny'] button[class*="bg-[#10253f]"] {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05) !important;
+}
+
+[data-theme='bright_sunny'] button[class*="bg-[#10253f]"]:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+}
+
+[data-theme='bright_sunny'] button[class*="bg-[#10253f]"] span:first-child {
+  color: #0f172a !important;
+}
+
+[data-theme='bright_sunny'] button[class*="bg-[#10253f]"] span:last-child {
+  color: #64748b !important;
+}
+
+/* 4. Four (4) Boundary Button - Crisp Daylight Sky Blue */
+[data-theme='bright_sunny'] button[class*="bg-blue-600"] {
+  background-color: #e0f2fe !important;
+  border-color: #7dd3fc !important;
+  color: #0369a1 !important;
+  box-shadow: 0 1px 3px rgba(3, 105, 161, 0.08) !important;
+}
+
+[data-theme='bright_sunny'] button[class*="bg-blue-600"] * {
+  color: #0369a1 !important;
+}
+
+/* 5. Six (6) Maximum Button - Warm Sunburst Gold */
+[data-theme='bright_sunny'] button[class*="bg-amber-400/25"] {
+  background-color: #fef3c7 !important;
+  border-color: #fcd34d !important;
+  color: #92400e !important;
+  box-shadow: 0 1px 3px rgba(180, 83, 9, 0.08) !important;
+}
+
+[data-theme='bright_sunny'] button[class*="bg-amber-400/25"] * {
+  color: #92400e !important;
+}
+
+/* 6. Extras Selection Buttons (Wide, No Ball, Bye, Leg Bye) */
+[data-theme='bright_sunny'] .grid button[class*="bg-[#071322]"] {
+  background-color: #ffffff !important;
+  border-color: #cbd5e1 !important;
+  color: #1e293b !important;
+}
+
+[data-theme='bright_sunny'] .grid button[class*="bg-[#071322]"]:hover {
+  background-color: #f1f5f9 !important;
+  border-color: #94a3b8 !important;
+  color: #0f172a !important;
+}
+
+/* 7. Action Utility Buttons (Rotate Strike, Change Bowler, Undo, Swap) */
+[data-theme='bright_sunny'] button.bg-rose-500\/10,
+[data-theme='bright_sunny'] .bg-rose-500\/10 {
+  background-color: #fee2e2 !important;
+  color: #b91c1c !important;
+  border-color: #fca5a5 !important;
+}
+
+[data-theme='bright_sunny'] button.bg-rose-500\/10 * {
+  color: #b91c1c !important;
+}
+
+/* 8. Recent Deliveries Mini-Pills */
+[data-theme='bright_sunny'] .font-mono-num .bg-\[\#10253f\],
+[data-theme='bright_sunny'] .font-mono-num .bg-\[\#09182a\] {
+  background-color: #f1f5f9 !important;
+  border-color: #cbd5e1 !important;
+  color: #0f172a !important;
+}
+
+/* 9. Notification & Over Prompt Banner */
+[data-theme='bright_sunny'] .bg-amber-400\/10 {
+  background-color: #fef3c7 !important;
+  border-color: #fcd34d !important;
+  color: #92400e !important;
+}
+
+[data-theme='bright_sunny'] .bg-amber-400\/10 span {
+  color: #92400e !important;
+}
+
+/* 10. Inputs, Selects, and Textareas */
+[data-theme='bright_sunny'] input,
+[data-theme='bright_sunny'] textarea,
+[data-theme='bright_sunny'] select {
+  background-color: #ffffff !important;
+  color: #0f172a !important;
+  border-color: #cbd5e1 !important;
+}
+
+[data-theme='bright_sunny'] input:focus,
+[data-theme='bright_sunny'] textarea:focus,
+[data-theme='bright_sunny'] select:focus {
+  border-color: #f59e0b !important;
+  outline-color: #f59e0b !important;
+  box-shadow: 0 0 0 3px rgba(245, 158, 11, 0.15) !important;
+}
+
+/* 11. Modals & Popovers Backdrop */
+[data-theme='bright_sunny'] .fixed.inset-0.bg-black\/80,
+[data-theme='bright_sunny'] .fixed.inset-0.bg-black\/85,
+[data-theme='bright_sunny'] .fixed.inset-0.bg-black\/75 {
+  background-color: rgba(15, 23, 42, 0.5) !important;
+  backdrop-filter: blur(4px) !important;
+}
+
+/* 12. Run Worm & Over SVG Charts in OverAnalysisView */
+[data-theme='bright_sunny'] svg line[stroke="#173559"],
+[data-theme='bright_sunny'] svg line[stroke="#142c4c"] {
+  stroke: #e2e8f0 !important;
+}
+
+[data-theme='bright_sunny'] svg text[fill="#94a3b8"] {
+  fill: #64748b !important;
+}
+
+/* 13. Scorecard & Player Stats Tables */
+[data-theme='bright_sunny'] table thead tr {
+  background-color: #f1f5f9 !important;
+  border-color: #e2e8f0 !important;
+}
+
+[data-theme='bright_sunny'] table thead th {
+  color: #475569 !important;
+}
+
+[data-theme='bright_sunny'] table tbody tr {
+  border-color: #f1f5f9 !important;
+}
+
+[data-theme='bright_sunny'] table tbody tr:hover {
+  background-color: #f8fafc !important;
+}
+
+[data-theme='bright_sunny'] table tbody tr.bg-\[\#071322\]\/80,
+[data-theme='bright_sunny'] table tbody tr.bg-\[\#071322\] {
+  background-color: #f8fafc !important;
+  border-color: #e2e8f0 !important;
+}
+
+/* 14. Footer */
+[data-theme='bright_sunny'] footer {
+  background-color: #ffffff !important;
+  border-color: #e2e8f0 !important;
+  color: #64748b !important;
+}
+
+/* --------------------------------------------------------
+   2. DAY BRIGHT COLORS (Vibrant Athletic Cyan / Amber)
+-------------------------------------------------------- */
+[data-theme='day_bright'],
+[data-theme='day_bright'] body {
+  background-color: #0c1a36 !important;
+  color: #f8fafc !important;
+}
+
+[data-theme='day_bright'] .theme-canvas-bg,
+[data-theme='day_bright'] .bg-\[\#06111f\],
+[data-theme='day_bright'] .bg-slate-950 {
+  background-color: #0c1a36 !important;
+}
+
+[data-theme='day_bright'] .bg-\[\#0b1a2e\],
+[data-theme='day_bright'] .bg-slate-900 {
+  background-color: #12264f !important;
+  border-color: #1f3d7d !important;
+}
+
+[data-theme='day_bright'] .bg-\[\#10253f\],
+[data-theme='day_bright'] .bg-slate-800 {
+  background-color: #173266 !important;
+  border-color: #244991 !important;
+}
+
+[data-theme='day_bright'] .bg-\[\#071322\] {
+  background-color: #0e1e3d !important;
+  border-color: #1d3b75 !important;
+}
+
+[data-theme='day_bright'] .border-\[\#1a365d\] {
+  border-color: #254b94 !important;
+}
+
+[data-theme='day_bright'] .border-\[\#142c4c\] {
+  border-color: #1d3b75 !important;
+}
+
+[data-theme='day_bright'] .text-amber-400 {
+  color: #38bdf8 !important;
+}
+
+[data-theme='day_bright'] .text-amber-300 {
+  color: #7dd3fc !important;
+}
+
+[data-theme='day_bright'] .bg-amber-400 {
+  background-color: #38bdf8 !important;
+  color: #082f49 !important;
+}
+
+[data-theme='day_bright'] .hover\:bg-amber-300:hover {
+  background-color: #7dd3fc !important;
+}
+
+/* --------------------------------------------------------
+   3. CLASSIC TURF (Traditional Cricket Stadium Emerald)
+-------------------------------------------------------- */
+[data-theme='classic_turf'],
+[data-theme='classic_turf'] body {
+  background-color: #02160d !important;
+  color: #f0fdf4 !important;
+}
+
+[data-theme='classic_turf'] .theme-canvas-bg,
+[data-theme='classic_turf'] .bg-\[\#06111f\],
+[data-theme='classic_turf'] .bg-slate-950 {
+  background-color: #02160d !important;
+}
+
+[data-theme='classic_turf'] .bg-\[\#0b1a2e\],
+[data-theme='classic_turf'] .bg-slate-900 {
+  background-color: #062b1b !important;
+  border-color: #0d4a2f !important;
+}
+
+[data-theme='classic_turf'] .bg-\[\#10253f\],
+[data-theme='classic_turf'] .bg-slate-800 {
+  background-color: #0a3824 !important;
+  border-color: #115c3a !important;
+}
+
+[data-theme='classic_turf'] .bg-\[\#071322\] {
+  background-color: #042014 !important;
+  border-color: #0a4028 !important;
+}
+
+[data-theme='classic_turf'] .border-\[\#1a365d\] {
+  border-color: #0f5235 !important;
+}
+
+[data-theme='classic_turf'] .border-\[\#142c4c\] {
+  border-color: #0a4028 !important;
+}
+
+[data-theme='classic_turf'] .text-amber-400 {
+  color: #10b981 !important;
+}
+
+[data-theme='classic_turf'] .text-amber-300 {
+  color: #34d399 !important;
+}
+
+[data-theme='classic_turf'] .bg-amber-400 {
+  background-color: #10b981 !important;
+  color: #022c22 !important;
+}
+
+[data-theme='classic_turf'] .hover\:bg-amber-300:hover {
+  background-color: #34d399 !important;
+}
+
+/* --------------------------------------------------------
+   4. SRI LANKA NAVY & GOLD (International SL Cricket)
+-------------------------------------------------------- */
+[data-theme='srilanka'] {
+  /* Retains the rich navy and gold international aesthetic natively */
+}
